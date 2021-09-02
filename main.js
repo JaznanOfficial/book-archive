@@ -11,8 +11,14 @@ const searchBook = () => {
         const url = `https://openlibrary.org/search.json?q=${searchText}`
         fetch(url)
             .then(response => response.json())
-            .then(data => displaySearchResult(data.docs))
+            .then(data => {
+                const totalFound = document.getElementById('total-found').innerText = data.numFound;
+                displaySearchResult(data.docs)
+                
+            })
     }
+    // 
+    
 }
 
 
@@ -51,7 +57,7 @@ const displaySearchResult = docs => {
         </div>
         `;
         searchResult.appendChild(div);
-        // const totalFound = document.getElementById('total-found').innerText = div.length ;
+        
         // console.log(totalFound);
     });
 }
