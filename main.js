@@ -32,7 +32,7 @@ const displaySearchResult = docs => {
     docs.forEach(doc => {
 
 
-
+        
         
     
         const div = document.createElement('div');
@@ -51,5 +51,7 @@ const displaySearchResult = docs => {
         </div>
         `;
         searchResult.appendChild(div);
+        // const totalFound = document.getElementById('total-found').innerText = div.length ;
+        // console.log(totalFound);
     });
 }
