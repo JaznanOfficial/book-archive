@@ -2,18 +2,39 @@ const searchBook = () => {
     const searchField = document.getElementById('search-field');
     const searchText = searchField.value;
 
-    searchField.value = '';
+    searchField.value = ''
 
-    const url = `https://openlibrary.org/search.json?q=${searchText}`
-    fetch(url)
-        .then(response => response.json())
-        .then(data => displaySearchResult(data.docs))
+    if (searchText === '') {
+    alert('Please Write some text')
+    }
+    else {
+        const url = `https://openlibrary.org/search.json?q=${searchText}`
+        fetch(url)
+            .then(response => response.json())
+            .then(data => displaySearchResult(data.docs))
+    }
 }
 
+
+
 const displaySearchResult = docs => {
+
+
+    if (docs.length === 0) {
+        alert('No result found. please write valid text or try again later')
+    }
+
+        
+
+
+
     const searchResult = document.getElementById('search-result');
     docs.forEach(doc => {
-        console.log(doc);
+
+
+
+        
+    
         const div = document.createElement('div');
         div.classList.add('col');
         div.innerHTML = `
