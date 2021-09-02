@@ -22,7 +22,7 @@ const displaySearchResult = docs => {
             <div class="card-body">
                 <h4 class="card-title">${doc.title}</h4>
                 <h6>Author: ${doc.author_name}</h6>
-                <p><b>Published Year: ${doc.publish_date[0]}</b></p>
+                <p><b>Published Date: ${doc.publish_date[0]}</b></p>
             </div>
         </div>
         `;
