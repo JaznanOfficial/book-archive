@@ -1,8 +1,11 @@
+
 const searchBook = () => {
+    
     const searchField = document.getElementById('search-field');
     const searchText = searchField.value;
 
     searchField.value = ''
+    
 
     if (searchText === '') {
     alert('Please Write some text')
@@ -17,7 +20,6 @@ const searchBook = () => {
                 
             })
     }
-    // 
     
 }
 
@@ -25,7 +27,7 @@ const searchBook = () => {
 
 const displaySearchResult = docs => {
 
-
+    
     if (docs.length === 0) {
         alert('No result found. please write valid text or try again later')
     }
@@ -35,8 +37,9 @@ const displaySearchResult = docs => {
 
 
     const searchResult = document.getElementById('search-result');
+    searchResult.textContent = '';
     docs.forEach(doc => {
-
+        
 
         
         
@@ -58,6 +61,6 @@ const displaySearchResult = docs => {
         `;
         searchResult.appendChild(div);
         
-        // console.log(totalFound);
+        
     });
 }
